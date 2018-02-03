@@ -259,7 +259,7 @@ export default class SchedulerData {
     getDateLabel(){
         let start = moment(this.startDate);
         let end = moment(this.endDate);
-        let dateLabel = start.format('YYYY MMM Do');
+        let dateLabel = start.format('dddd, Do MMM YYYY');
 
         if(this.viewType === ViewTypes.Week) {
             dateLabel = `${start.format('YYYY MMM Do')}-${end.format('Do')}`;
