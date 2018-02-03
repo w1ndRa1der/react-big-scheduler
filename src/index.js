@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {Row, Col, Icon, Radio, Popover, DatePicker} from 'antd'
 import moment from 'moment'
-import 'moment/locale/zh-cn'
 import EventItem from './EventItem'
 import DnDSource from './DnDSource'
 import DnDContext from './DnDContext'
@@ -146,7 +145,7 @@ class Scheduler extends Component {
                 };
             }
 
-            let resourceName = schedulerData.isEventPerspective ? '任务名称' : '资源名称';
+            let resourceName = schedulerData.isEventPerspective ? 'Tasks' : 'Courts';
             tbodyContent = (
                 <tr>
                     <td style={{width: resourceTableWidth, verticalAlign: 'top'}}>

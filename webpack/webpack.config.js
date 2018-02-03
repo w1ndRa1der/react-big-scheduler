@@ -41,7 +41,7 @@ module.exports = {
         }),
         new webpack.ContextReplacementPlugin(
             /moment[\\\/]locale$/,
-            /^\.\/(zh-cn)$/
+            /^\.\/(en-us)$/
         ),
         // new webpack.DllReferencePlugin({
         //     context: root,

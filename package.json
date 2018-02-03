@@ -41,7 +41,7 @@
   ],
   "dependencies": {
     "antd": "^2.13.11",
-    "moment": "^2.18.1",
+    "moment": "^2.20.1",
     "prop-types": "^15.6.0"
   },
   "devDependencies": {

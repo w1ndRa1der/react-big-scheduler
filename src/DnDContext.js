@@ -3,7 +3,6 @@ import {getPos} from './Util'
 import {DnDTypes} from './DnDTypes'
 import {ViewTypes, DATETIME_FORMAT} from './index'
 import moment from 'moment'
-import 'moment/locale/zh-cn'
 
 export default class DnDContext {
     constructor(sources, DecoratedComponent) {

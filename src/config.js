@@ -48,9 +48,9 @@ export default {
     scrollToTodayEnabled: true,
 
     views: [
-        {viewName: '天', viewType: ViewTypes.Day, showAgenda: false, isEventPerspective: false},
-        {viewName: '周', viewType: ViewTypes.Week, showAgenda: false, isEventPerspective: false},
-        {viewName: '月', viewType: ViewTypes.Month, showAgenda: false, isEventPerspective: false},
-        {viewName: '年', viewType: ViewTypes.Year, showAgenda: false, isEventPerspective: false},
+        {viewName: 'Day', viewType: ViewTypes.Day, showAgenda: false, isEventPerspective: false},
+        {viewName: 'Week', viewType: ViewTypes.Week, showAgenda: false, isEventPerspective: false},
+        {viewName: 'Month', viewType: ViewTypes.Month, showAgenda: false, isEventPerspective: false},
+        {viewName: 'Year', viewType: ViewTypes.Year, showAgenda: false, isEventPerspective: false},
     ],
 }

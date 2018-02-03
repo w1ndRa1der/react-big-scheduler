@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {Popover} from 'antd';
 import moment from 'moment'
-import 'moment/locale/zh-cn'
 import EventItemPopover from './EventItemPopover'
 import {ViewTypes, DATETIME_FORMAT} from './index'
 

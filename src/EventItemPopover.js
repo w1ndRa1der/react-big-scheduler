@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {Row, Col} from 'antd'
 import moment from 'moment'
-import 'moment/locale/zh-cn'
 
 class EventItemPopover extends Component {
     constructor(props) {
@@ -99,7 +98,7 @@ class EventItemPopover extends Component {
                         <div />
                     </Col>
                     <Col span={22}>
-                        <span className="header1-text">{start.format('HH:mm')}</span><span className="help-text" style={{marginLeft: '8px'}}>{start.format('M月D日')}</span><span className="header2-text"  style={{marginLeft: '8px'}}>-</span><span className="header1-text" style={{marginLeft: '8px'}}>{end.format('HH:mm')}</span><span className="help-text" style={{marginLeft: '8px'}}>{end.format('M月D日')}</span>
+                        <span className="header1-text">{start.format('HH:mm')}</span><span className="help-text" style={{marginLeft: '8px'}}>{start.format('MMM Do')}</span><span className="header2-text"  style={{marginLeft: '8px'}}>-</span><span className="header1-text" style={{marginLeft: '8px'}}>{end.format('HH:mm')}</span><span className="help-text" style={{marginLeft: '8px'}}>{end.format('MMM Do')}</span>
                     </Col>
                 </Row>
                 {opsRow}

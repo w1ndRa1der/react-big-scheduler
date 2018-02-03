@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {Row, Col, Icon} from 'antd'
 import moment from 'moment'
-import 'moment/locale/zh-cn'
 import EventItem from './EventItem'
 import DnDSource from './DnDSource'
 

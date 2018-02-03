@@ -1,5 +1,4 @@
 import moment from 'moment'
-import 'moment/locale/zh-cn'
 import config from './config'
 import behaviors from './behaviors'
 import {ViewTypes, DATE_FORMAT, DATETIME_FORMAT} from './index'
@@ -260,23 +259,23 @@ export default class SchedulerData {
     getDateLabel(){
         let start = moment(this.startDate);
         let end = moment(this.endDate);
-        let dateLabel = start.format('YYYY年M月D日');
+        let dateLabel = start.format('YYYY MMM Do');
 
         if(this.viewType === ViewTypes.Week) {
-            dateLabel = `${start.format('YYYY年M月D日')}-${end.format('D日')}`;
+            dateLabel = `${start.format('YYYY MMM Do')}-${end.format('Do')}`;
             if(start.month() !== end.month())
-                dateLabel = `${start.format('YYYY年M月D日')}-${end.format('M月D日')}`;
+                dateLabel = `${start.format('YYYY MMM Do')}-${end.format('MMM Do')}`;
             if(start.year() !== end.year())
-                dateLabel = `${start.format('YYYY年M月D日')}-${end.format('YYYY年M月D日')}`;
+                dateLabel = `${start.format('YYYY MMM Do')}-${end.format('YYYY MMM Do')}`;
         }
         else if(this.viewType === ViewTypes.Month){
-            dateLabel = start.format('YYYY年M月');
+            dateLabel = start.format('YYYY MMM');
         }
         else if(this.viewType === ViewTypes.Quarter){
-            dateLabel = `${start.format('YYYY年M月D日')}-${end.format('M月D日')}`;
+            dateLabel = `${start.format('YYYY MMM Do')}-${end.format('MMM Do')}`;
         }
         else if(this.viewType === ViewTypes.Year) {
-            dateLabel = start.format('YYYY年');
+            dateLabel = start.format('YYYY');
         }
 
         return dateLabel;

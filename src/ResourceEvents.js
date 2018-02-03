@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
-import 'moment/locale/zh-cn'
 import AddMore from './AddMore'
 import Summary from './Summary'
 import SelectedArea from './SelectedArea'
