@@ -150,7 +150,7 @@ class Scheduler extends Component {
                 <tr>
                     <td style={{width: resourceTableWidth, verticalAlign: 'top'}}>
                         <div className="resource-view">
-                            <div style={{overflow: "hidden", height: config.tableHeaderHeight}}>
+                            <div style={{overflow: "visible", height: config.tableHeaderHeight}}>
                                 <div style={{overflowX: "scroll", overflowY: "hidden", margin: `0px 0px -${browserScrollbarHeight}px`}}>
                                     <table className="resource-table">
                                         <thead>

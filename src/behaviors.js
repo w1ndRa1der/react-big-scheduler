@@ -22,7 +22,10 @@ export const getEventText = (schedulerData, event) => {
 export const isNonWorkingTime = (schedulerData, time) => {
     if(schedulerData.viewType === ViewTypes.Day){
         let hour = moment(time).hour();
-        if(hour < 9 || hour > 18)
+        let date = moment(time).format("YYYYMMDD");
+        let currentHour = moment().hour();
+        let currentDate = moment().format("YYYYMMDD");
+        if(hour == currentHour && date == currentDate)
             return true;
     }
     else {
