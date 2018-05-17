@@ -89,7 +89,7 @@ class EventItemPopover extends Component {
                         <div className="status-dot" style={{backgroundColor: statusColor}} />
                     </Col>
                     <Col span={22} className="overflow-text">
-                        <span className="header2-text" style={{color: statusColor}}>{status}</span>
+                        <span className="header2-text" style={{color: statusColor}}>{eventItem.status}</span>
                     </Col>
                 </Row>
                 {subtitleRow}
