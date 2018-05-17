@@ -23,10 +23,10 @@ class HeaderView extends Component {
         let style = {};
         if(viewType === ViewTypes.Day){
             headers.forEach((item, index) => {
-                if(index % 2 === 0){
+                if(index % 4 === 0){
                     let datetime = moment(item.time);
                     let time = datetime.format('HH:mm');
-                    style = !!item.nonWorkingTime ? {width: cellWidth*2, color: config.nonWorkingTimeHeadColor, backgroundColor: config.nonWorkingTimeHeadBgColor} : {width: cellWidth*2};
+                    style = !!item.nonWorkingTime ? {width: cellWidth*4, color: config.nonWorkingTimeHeadColor, backgroundColor: config.nonWorkingTimeHeadBgColor} : {width: cellWidth*4};
                     if(index === headers.length - 2)
                         style = !!item.nonWorkingTime ? {color: config.nonWorkingTimeHeadColor, backgroundColor: config.nonWorkingTimeHeadBgColor} : {};
                     let element = (

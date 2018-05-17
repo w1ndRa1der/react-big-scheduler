@@ -279,7 +279,8 @@ class EventItem extends Component {
                 title={eventItem.title}
                 startTime={eventItem.start}
                 endTime={eventItem.end}
-                statusColor={bgColor}/>
+                statusColor={bgColor}
+            />
         );
 
         let start = moment(eventItem.start);

@@ -382,12 +382,12 @@ export default class SchedulerData {
                     let nonWorkingTime = this.behaviors.isNonWorkingTimeFunc(this, time);
                     headers.push({ time: time, nonWorkingTime: nonWorkingTime });
 
-                    header = header.add(30, 'minutes');
+                    header = header.add(15, 'minutes');
                     time = header.format(DATETIME_FORMAT);
                     nonWorkingTime = this.behaviors.isNonWorkingTimeFunc(this, time);
                     headers.push({ time: time, nonWorkingTime: nonWorkingTime });
 
-                    header = header.add(30, 'minutes');
+                    header = header.add(15, 'minutes');
                 }
             }
             else {
@@ -414,7 +414,7 @@ export default class SchedulerData {
                         start.add(1, 'quarters').format(DATETIME_FORMAT)
                 )
             )
-        )) : (this.viewType === ViewTypes.Day ?  start.add(30, 'minutes').format(DATETIME_FORMAT)
+        )) : (this.viewType === ViewTypes.Day ?  start.add(15, 'minutes').format(DATETIME_FORMAT)
             : start.add(1, 'days').format(DATETIME_FORMAT));
         return {
             time:  header.time,
@@ -497,7 +497,7 @@ export default class SchedulerData {
         if(this.showAgenda) return 1;
 
         let start = this.viewType === ViewTypes.Day ?
-                (moment(startTime).startOf('hour').add(30, 'minutes') <= moment(startTime) ? moment(startTime).startOf('hour').add(30, 'minutes') : moment(startTime).startOf('hour'))
+                (moment(startTime).startOf('hour').add(Math.floor(moment(startTime).minute() / 15) * 15, 'minutes'))
                 : moment(startTime).startOf('day'),
             end = moment(endTime),
             spanStart = moment(startDate),
@@ -510,7 +510,7 @@ export default class SchedulerData {
                 span++;
             }
 
-            time = this.viewType === ViewTypes.Day ? time.add(30, 'minutes') : time.add(1, 'days');
+            time = this.viewType === ViewTypes.Day ? time.add(15, 'minutes') : time.add(1, 'days');
         }
 
         return span;
@@ -591,7 +591,6 @@ export default class SchedulerData {
                 let span = this._getSpan(item.start, item.end, this.headers[0].time, this.headers[this.headers.length - 1].time);
                 let eventStart = moment(item.start), eventEnd = moment(item.end);
                 let pos = -1;
-
                 resourceEvents.headerItems.forEach((header, index) => {
                     let headerStart = moment(header.start), headerEnd = moment(header.end);
                     if(headerEnd > eventStart && headerStart < eventEnd) {

@@ -39,12 +39,12 @@ export default {
     summaryColor: '#666',
     summaryPos: SummaryPos.TopRight,
 
-    startResizable: true,
-    endResizable: true,
-    movable: true,
+    startResizable: false,
+    endResizable: false,
+    movable: false,
     creatable: true,
-    crossResourceMove: true,
-    checkConflict: false,
+    crossResourceMove: false,
+    checkConflict: true,
     scrollToTodayEnabled: true,
 
     views: [

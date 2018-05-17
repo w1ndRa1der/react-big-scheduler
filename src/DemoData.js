@@ -36,7 +36,13 @@ const DemoData = {
             end: '2017-12-19 23:30:00',
             resourceId: 'r1',
             title: 'I am finished',
-            bgColor: '#D9D9D9'
+            bgColor: '#D9D9D9',
+            renderDetails: ["resourceId","bgColor", "id"],
+            renderKey: {
+                resourceId: "Resource ID",
+                bgColor: "Background Color",
+                id: "ID",
+            },
         },
         {
             id: 2,

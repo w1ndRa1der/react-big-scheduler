@@ -89,7 +89,7 @@ class EventItemPopover extends Component {
                         <div className="status-dot" style={{backgroundColor: statusColor}} />
                     </Col>
                     <Col span={22} className="overflow-text">
-                        <span className="header2-text" title={title}>{title}</span>
+                        <span className="header2-text" style={{color: statusColor}}>{status}</span>
                     </Col>
                 </Row>
                 {subtitleRow}
@@ -101,6 +101,16 @@ class EventItemPopover extends Component {
                         <span className="header1-text">{start.format('HH:mm')}</span><span className="help-text" style={{marginLeft: '8px'}}>{start.format('Do MMM')}</span><span className="header2-text"  style={{marginLeft: '8px'}}>-</span><span className="header1-text" style={{marginLeft: '8px'}}>{end.format('HH:mm')}</span><span className="help-text" style={{marginLeft: '8px'}}>{end.format('Do MMM')}</span>
                     </Col>
                 </Row>
+                {eventItem.renderDetails && (eventItem.renderDetails.map((item,key) => (
+                    <Row type="flex" align="middle">
+                        <Col span={2}>
+                            <div />
+                        </Col>
+                        <Col span={22} className="overflow-text">
+                            <span className="header2-text">{eventItem.renderKey[item]}&nbsp;:&nbsp;{eventItem[item]}</span>
+                        </Col>
+                    </Row>
+                )))}
                 {opsRow}
             </div>
         );
