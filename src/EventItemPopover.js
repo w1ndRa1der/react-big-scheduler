@@ -102,7 +102,7 @@ class EventItemPopover extends Component {
                     </Col>
                 </Row>
                 {eventItem.renderDetails && (eventItem.renderDetails.map((item,key) => (
-                    <Row type="flex" align="middle">
+                    <Row type="flex" align="middle" key={key}>
                         <Col span={2}>
                             <div />
                         </Col>

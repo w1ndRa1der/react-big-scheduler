@@ -374,10 +374,9 @@ export default class SchedulerData {
         else {
             if (this.viewType === ViewTypes.Day) {
                 start = start.add(this.config.dayStartFrom, 'hours');
-                end = end.add(this.config.dayStopTo, 'hours');
+                end = end.add(this.config.dayStopTo + 1, 'hours');
                 header = start;
-
-                while (header >= start && header <= end) {
+                while (header >= start && header < end) {
                     let time = header.format(DATETIME_FORMAT);
                     let nonWorkingTime = this.behaviors.isNonWorkingTimeFunc(this, time);
                     headers.push({ time: time, nonWorkingTime: nonWorkingTime });
@@ -400,7 +399,6 @@ export default class SchedulerData {
                 }
             }
         }
-
         this.headers = headers;
     }
 
