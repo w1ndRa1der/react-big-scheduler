@@ -46,10 +46,10 @@ class Scheduler extends Component {
 
     static propTypes = {
         schedulerData: PropTypes.object.isRequired,
-        prevClick: PropTypes.func.isRequired,
-        nextClick: PropTypes.func.isRequired,
-        onViewChange: PropTypes.func.isRequired,
-        onSelectDate: PropTypes.func.isRequired,
+        prevClick: PropTypes.func,
+        nextClick: PropTypes.func,
+        onViewChange: PropTypes.func,
+        onSelectDate: PropTypes.func,
         onSetAddMoreState: PropTypes.func,
         updateEventStart: PropTypes.func,
         updateEventEnd: PropTypes.func,
@@ -208,33 +208,6 @@ class Scheduler extends Component {
 
         return (
             <table className="scheduler" style={{width: width}}>
-                <thead>
-                <tr>
-                    <td colSpan="2">
-                        <Row type="flex" align="middle" justify="space-between" style={{marginBottom: '24px'}}>
-                            {customHeader}
-                            <Col>
-                                <div className='header2-text'>
-                                    <Icon type="left" style={{marginRight: "8px"}} className="icon-nav"
-                                          onClick={this.goBack}/>
-                                    <Popover content={popover} placement="bottom" trigger="click"
-                                             visible={this.state.visible}
-                                             onVisibleChange={this.handleVisibleChange}>
-                                        <span style={{cursor: 'pointer'}}>{dateLabel}</span>
-                                    </Popover>
-                                    <Icon type="right" style={{marginLeft: "8px"}} className="icon-nav"
-                                          onClick={this.goNext}/>
-                                </div>
-                            </Col>
-                            <Col>
-                                <RadioGroup defaultValue={defaultValue} size="default" onChange={this.onViewChange}>
-                                    {radioButtonList}
-                                </RadioGroup>
-                            </Col>
-                        </Row>
-                    </td>
-                </tr>
-                </thead>
                 <tbody>
                 {tbodyContent}
                 </tbody>
